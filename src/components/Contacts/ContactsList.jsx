@@ -3,7 +3,7 @@ import { Wraper, Btn } from './Contacts.styled';
 
 const ContactsList = ({ contacts, onDelete }) => {
   return (
-    <div>
+    <>
       <Wraper>
         {contacts.map(({ id, name, numder }) => (
           <li key={id} id={id}>
@@ -12,7 +12,7 @@ const ContactsList = ({ contacts, onDelete }) => {
           </li>
         ))}
       </Wraper>
-    </div>
+    </>
   );
 };
 

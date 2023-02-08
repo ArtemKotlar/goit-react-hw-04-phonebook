@@ -27,7 +27,7 @@ class FormsList extends Component {
     return (
       <Formik>
         <Wrap action="" onSubmit={this.handleSudmit}>
-          <label htmlFor="">
+          <label htmlFor="name">
             <Title>Name</Title>
             <Input
               type="text"
@@ -40,7 +40,7 @@ class FormsList extends Component {
             />
           </label>
 
-          <label htmlFor="">
+          <label htmlFor="number">
             <Title>Number</Title>
             <Input
               type="tel"
