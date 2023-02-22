@@ -1,7 +1,8 @@
+import { Box } from 'components/Box';
 import { Formik } from 'formik';
 import PT from 'prop-types';
 import { Component } from 'react';
-import { Wrap, Input, Title, Btn } from './Forms.styled';
+import { Input, Title, Btn } from './Forms.styled';
 
 class FormsList extends Component {
   state = {
@@ -17,7 +18,7 @@ class FormsList extends Component {
     this.setState({ name: '', number: '' });
   };
 
-  handleSudmit = event => {
+  handleSubmit = event => {
     event.preventDefault();
     this.props.onSubmit(this.state);
     this.reset();
@@ -26,7 +27,21 @@ class FormsList extends Component {
   render() {
     return (
       <Formik>
-        <Wrap action="" onSubmit={this.handleSudmit}>
+        <Box
+          p={4}
+          m="auto"
+          bg="primary"
+          width=" 250px"
+          display="flex"
+          flexDirection="column"
+          textAlign="center"
+          borderRadius="normal"
+          border="normal"
+          boxShadow="shadow"
+          as="form"
+          action=""
+          onSubmit={this.handleSubmit}
+        >
           <label htmlFor="name">
             <Title>Name</Title>
             <Input
@@ -53,7 +68,7 @@ class FormsList extends Component {
             />
           </label>
           <Btn type="submit">Add contact</Btn>
-        </Wrap>
+        </Box>
       </Formik>
     );
   }

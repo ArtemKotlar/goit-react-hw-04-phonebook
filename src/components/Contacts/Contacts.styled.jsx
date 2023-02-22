@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wraper = styled.ul`
-  width: 250px;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   row-gap: 10px;

@@ -1,8 +1,9 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import FormsList from './Forms/FormsList';
 import ContactsList from './Contacts/ContactsList';
 import Filter from './Filter/Filter';
+import Forms from './Forms/Forms';
+import { Box } from './Box';
 
 const CONTACTS_KEY = 'contacts';
 
@@ -63,13 +64,13 @@ class App extends Component {
   render() {
     const filterContacts = this.filterContacts();
     return (
-      <div>
+      <Box bg="box" pt={2} pb={8}>
         <h1 style={{ textAlign: 'center' }}>Phonebook</h1>
-        <FormsList onSubmit={this.addContact} />
+        <Forms onSubmit={this.addContact} />
         <h2 style={{ textAlign: 'center' }}>Contacts</h2>
         <Filter onHandleFilter={this.handleFilter} />
         <ContactsList contacts={filterContacts} onDelete={this.deleteContact} />
-      </div>
+      </Box>
     );
   }
 }

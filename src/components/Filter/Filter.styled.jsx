@@ -10,8 +10,11 @@ export const Title = styled.p`
 `;
 
 export const Input = styled.input`
+  width: 280px;
   outline: transparent;
   padding: 10px;
   margin: 0;
   border-radius: 3px;
+  border: 1px solid black;
+  box-shadow: ${p => p.theme.shadows.shadow};
 `;

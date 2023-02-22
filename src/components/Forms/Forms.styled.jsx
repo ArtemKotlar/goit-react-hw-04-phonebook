@@ -1,19 +1,8 @@
+import { Field } from 'formik';
 import styled from 'styled-components';
 
-export const Wrap = styled.form`
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: 20px auto 0 auto;
-  box-shadow: 0px 4px 10px rgb(0 0 0 / 57%);
-  border-radius: 5px;
-  padding: 20px;
-  border: 1px solid black;
-  background-color: #92e0e0;
-`;
-
-export const Input = styled.input`
+export const Input = styled(Field)`
+  width: 280px;
   border: none;
   outline: transparent;
   padding: 10px;
@@ -27,6 +16,7 @@ export const Title = styled.p`
 `;
 
 export const Btn = styled.button`
+  display: block;
   width: 150px;
   border: 1px solid black;
   border-radius: 2px;
