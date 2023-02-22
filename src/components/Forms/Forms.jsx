@@ -1,7 +1,20 @@
 import { Box } from 'components/Box';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Form, Formik } from 'formik';
 import * as yup from 'yup';
 import { Input, Btn, Title } from './Forms.styled';
+import styled from 'styled-components';
+
+const ErrorText = styled.p`
+  color: red;
+`;
+const FormError = ({ name }) => {
+  return (
+    <ErrorMessage
+      name={name}
+      render={message => <ErrorText>{message}</ErrorText>}
+    />
+  );
+};
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -46,12 +59,12 @@ const Forms = ({ onSubmit }) => {
           <label htmlFor="name">
             <Title>Name</Title>
             <Input type="text" name="name" placeholder="Full name" />
-            <ErrorMessage name="name" component="div" />
+            <FormError name="name" component="div" />
           </label>
           <label htmlFor="number">
             <Title>Number</Title>
             <Input type="tel" name="number" placeholder="Phone number" />
-            <ErrorMessage name="number" component="div" />
+            <FormError name="number" component="div" />
           </label>
           <Btn type="submit">Add contact</Btn>
         </Form>
