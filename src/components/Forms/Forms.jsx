@@ -1,3 +1,4 @@
+import PT from 'prop-types';
 import { Box } from 'components/Box';
 import { ErrorMessage, Form, Formik } from 'formik';
 import * as yup from 'yup';
@@ -74,3 +75,7 @@ const Forms = ({ onSubmit }) => {
 };
 
 export default Forms;
+
+Forms.propTypes = {
+  onSubmit: PT.func,
+};
